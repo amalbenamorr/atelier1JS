@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice n°6</title>
+</head>
+<body>
+<h1 onclick="modif_paragraphe()">Cliquez ici pour modifier le paragraphe</h1>
+<p id="paragraphe">Ceci est un paragraphe avec un mot original.</p>
+<script>
+function modif_paragraphe() {
+       const paragraphe = document.getElementById("paragraphe");
+        paragraphe.innerHTML = paragraphe.innerHTML.replace("original", "<i>corrigé</i>");
+    }
+function centrage_h1() {
+        const h1Elements = document.getElementsByTagName("h1");
+        if (h1Elements.length > 0) {
+            const premierH1 = h1Elements[0];
+            premierH1.setAttribute("align", "center");
+        }
+    }
+    
+
+document.getElementById("paragraphe").addEventListener("click", centrage_h1);
+</script>
+</body>
+</html>

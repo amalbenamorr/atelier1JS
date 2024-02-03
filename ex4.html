@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice n°4</title>
+</head>
+<body>
+
+<h1>Tableau</h1>
+<p id="output"></p>
+
+<script>
+T = [17, 38, 10, 25, 72];
+const outputElement = document.getElementById("output");//on change le contenu du doc actuel
+//Tri du tableau
+const result = T.sort();
+outputElement.innerHTML += "Tableau trié: " + result + "<br>";//+= pour l'affich de chaque cas dans une ligne
+// Ajout de l'élément 12 au tableau
+T.push(12);
+const result1 = T;//chaque fois on fait T dans result apres modification
+outputElement.innerHTML += "Tableau après l'ajout de 12: " + result1 + "<br>";
+//Renverser le tableau
+T.reverse();
+const result2 = T;
+outputElement.innerHTML += "Tableau renversé: " + result2 + "<br>";
+// Afficher l'indice de l'elem 17
+const result3 = T.indexOf(17);
+outputElement.innerHTML += "Indice de l'élément 17: " + result3 + "<br>";
+
+//Enlever l'elem 38 et afficher le tableau
+const indexToRemove = T.indexOf(38);
+if (indexToRemove !== -1) {
+  T.splice(indexToRemove, 1);
+}
+const result4 = T;
+outputElement.innerHTML += "Tableau sans l'élément 38: " + result4 + "<br>";
+
+// Afficher le sous-tableau du 2e au 3e elem
+const result5 = T.slice(1, 3);
+outputElement.innerHTML += "Sous-tableau du 2e au 3e élément: " + result5 + "<br>";
+
+// Afficher le sous-tableau du début au 2e elem
+const result6 = T.slice(0, 2);
+outputElement.innerHTML += "Sous-tableau du début au 2e élément: " + result6 + "<br>";
+
+// Afficher le sous-tableau du 3e elem à la fin de la liste
+const result7 = T.slice(2);
+outputElement.innerHTML += "Sous-tableau du 3e élément à la fin de la liste: " + result7 + "<br>";
+</script>
+</body>
+</html>

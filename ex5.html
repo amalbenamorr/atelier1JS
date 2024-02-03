@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercice n°5</title>
+</head>
+<body>
+
+<h1>Window</h1>
+<p id="output"></p>
+
+<script>
+function entierAleatoire(min, max) {
+    return Math.floor(Math.random()*(max - min + 1)) + min;
+}
+
+function devinerNombre() {
+    const nombreAleatoire = entierAleatoire(0, 10);
+    let essais = 3;
+
+    while (essais > 0) {
+        const test = parseInt(prompt("Devinez le nombre entre 0 et 10 (vous avez encore " + essais + " essais) :"));
+        if (test === nombreAleatoire) {
+            alert("Bravo! Vous avez deviné le nombre.");
+            return;
+        } else {
+            alert("Ce n'est pas le bon nombre.");
+            essais--;
+        }
+    }
+
+    alert("Vous avez épuisé vos essais. Le nombre était " + nombreAleatoire);
+}
+
+devinerNombre();
+
+</script>
+</body>
+</html>
